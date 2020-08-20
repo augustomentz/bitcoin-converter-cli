@@ -1,0 +1,25 @@
+{
+  "extends": "airbnb-base",
+  "plugins": [
+    "import"
+  ],
+  "overrides": [
+    {
+      "files": ["*.spec.js"],
+      "rules": {
+        "no-unused-expressions": "off"
+      }
+   }
+  ],
+  "globals": {
+    "document": false,
+    "window": false
+  },
+  "rules": {
+    "no-console": "off",
+    "class-methods-use-this": "off",
+    "no-redeclare": "off",
+    "no-param-reassign": "off",
+    "arrow-body-style": "off"
+  }
+}

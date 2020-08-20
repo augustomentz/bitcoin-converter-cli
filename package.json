@@ -1,0 +1,46 @@
+{
+  "name": "bitcoin-converter-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "A CLI to work with Bitcoin converter",
+  "repository": "https://github.com/augustomentz/bitcoin-converter-cli.git",
+  "author": "Augusto Mentz <augustohmn.tech@gmail.com> (https://github.com/augustomentz)",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint src/**/*.js",
+    "pre-commit": "yarn lint",
+    "test": "mocha tests/**/**.spec.js --require @babel/register --reporter nyan",
+    "test:watch": "mocha tests/**/**.spec.js --require @babel/register --watch --reporter nyan",
+    "test:coverage": "nyc yarn test"
+  },
+  "nyc": {
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn pre-commit"
+    }
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/register": "^7.10.5",
+    "babel-loader": "^8.1.0",
+    "chai": "^4.2.0",
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "husky": "^4.2.5",
+    "mocha": "^8.1.1",
+    "nyc": "^15.1.0",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2"
+  }
+}
