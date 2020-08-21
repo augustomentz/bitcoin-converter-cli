@@ -2,15 +2,23 @@
   "name": "bitcoin-converter-cli",
   "version": "1.0.0",
   "main": "index.js",
-  "description": "A CLI to work with Bitcoin converter",
+  "description": "A CLI to work with Bitcoin converters",
   "repository": "https://github.com/augustomentz/bitcoin-converter-cli.git",
   "author": "Augusto Mentz <augustohmn.tech@gmail.com> (https://github.com/augustomentz)",
   "license": "MIT",
+  "preferGlobal": true,
+  "bin": {
+    "btc-converter": "bin/index.js"
+  },
   "scripts": {
+    "clear": "rimraf bin",
+    "build": "yarn clear && babel --out-dir bin src",
+    "build:watch": "yarn clear && yarn build --watch",
+    "build:prod": "yarn clear && yarn lint && yarn test && yarn build:umd && babel --out-dir bin src",
     "lint": "eslint src/**/*.js",
     "pre-commit": "yarn lint",
     "test": "mocha tests/**/**.spec.js --require @babel/register --reporter nyan",
-    "test:watch": "mocha tests/**/**.spec.js --require @babel/register --watch --reporter nyan",
+    "test:watch": "yarn test --watch",
     "test:coverage": "nyc yarn test"
   },
   "nyc": {
@@ -42,5 +50,8 @@
     "nyc": "^15.1.0",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "commander": "^6.0.0"
   }
 }
