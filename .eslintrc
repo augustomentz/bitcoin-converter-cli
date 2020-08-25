@@ -21,6 +21,7 @@
     "class-methods-use-this": "off",
     "no-redeclare": "off",
     "no-param-reassign": "off",
-    "arrow-body-style": "off"
+    "arrow-body-style": "off",
+    "comma-dangle": "off"
   }
 }
