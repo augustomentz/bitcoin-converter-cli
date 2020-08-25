@@ -5,7 +5,7 @@ const { exec } = require('child_process');
 
 const pkg = require('../package.json');
 
-const btcConverter = './src/index.js';
+const btcConverter = 'node ./src/index.js';
 
 describe('Bitcoin Converter CLI', () => {
   it('Should return version of btc-converter', (done) => {
